@@ -6,3 +6,7 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
+./ModuleTSC/package.json
+./ModuleTSC/package-lock.json
+./ModuleTSC/tsconfig.json
