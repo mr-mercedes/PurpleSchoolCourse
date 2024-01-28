@@ -1,0 +1,8 @@
+.like {
+    color: #6E6E6E;
+    display: flex;
+    font-size: 12px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+}

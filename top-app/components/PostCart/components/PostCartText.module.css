@@ -1,0 +1,16 @@
+.p {
+    text-align: left;
+}
+
+.small {
+    font-size: 12px;
+}
+
+.medium {
+    font-size: 14px;
+}
+
+.large {
+    font-size: 18px;
+    font-weight: bold;
+}
