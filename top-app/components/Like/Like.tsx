@@ -5,7 +5,7 @@ import Image from "next/image";
 import styles from './Like.module.css';
 
 export const Like = ({count = 0}: LikeProps): JSX.Element => {
-    const [likeCount, setLikeCount] = useState(count);
+    const [likeCount, setLikeCount] = useState<number>(count);
     return (
         <div className={styles.like}>
             <span className={styles.like}>{likeCount}</span>
