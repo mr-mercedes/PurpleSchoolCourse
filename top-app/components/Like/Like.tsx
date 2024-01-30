@@ -12,7 +12,7 @@ export const Like = ({count = 0}: LikeProps): JSX.Element => {
             method: 'PATCH'}).then(resp =>
             console.log(resp)
         );
-    }
+    };
 
     return (
         <div className={styles.like}>

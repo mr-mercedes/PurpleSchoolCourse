@@ -4,13 +4,17 @@
 
 .small {
     font-size: 12px;
+    line-height: normal;
 }
 
 .medium {
     font-size: 14px;
+    line-height: 21px;
 }
 
 .large {
     font-size: 18px;
+    line-height: normal;
+    color: var(--black);
     font-weight: bold;
 }
