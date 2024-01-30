@@ -11,5 +11,5 @@ export const PostCartText = ({children, size = 14, className, ...props}: PostCar
             [styles.large]: size == 18,
         })}{...props}>
             {children}
-        </p>)
-}
+        </p>);
+};

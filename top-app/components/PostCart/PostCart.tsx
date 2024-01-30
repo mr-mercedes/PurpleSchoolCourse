@@ -25,12 +25,11 @@ export const PostCart = ({tag, title, text, last_change}: PostCartProps): JSX.El
             <div className={styles.post_footer}>
                 <PostCartText size={12}>{last_change}</PostCartText>
                 <a href={'/'}><span className={styles.post_btn}>Читать<Image
-                    src={'/arrow.svg'}
+                    src={'./arrow.svg'}
                     alt={'cart image'}
                     width={20}
                     height={20}
                 /></span></a>
             </div>
-        </div>)
-
-}
+        </div>);
+};

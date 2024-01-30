@@ -9,8 +9,8 @@ export const generateMetadata = async (): Promise<Metadata> => {
     return {
         title: "MyTop - наш лучший топ",
         description: "Сайт для публикации топов",
-    }
-}
+    };
+};
 
 export default function RootLayout({children}: Readonly<{ children: React.ReactNode }>) {
     return (

@@ -9,5 +9,5 @@ export const Paragraph = ({size = 16, children, className, ...props}: ParagraphP
         [styles.small]: size == 14,
         [styles.medium]: size == 16,
         [styles.large]: size == 18
-    })}{...props}>{children}</p>)
-}
+    })}{...props}>{children}</p>);
+};
