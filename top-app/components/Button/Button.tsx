@@ -18,7 +18,7 @@ export const Button = ({children, arrow = 'none', appearance, className, ...prop
                 <span className={cn(styles.arrow, {
                     [styles.down]: arrow == 'down'
                 })}><Image
-                    src={'./arrow.svg'}
+                    src={'/arrow.svg'}
                     alt={'arrow'}
                     width={5.8}
                     height={10}
