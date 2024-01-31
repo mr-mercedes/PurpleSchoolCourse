@@ -3,5 +3,24 @@
     display: flex;
     font-size: 12px;
     flex-flow: row nowrap;
-    align-items: flex-end;
+    align-items: center;
+}
+
+.like_in_circle_on {
+    border: 1px solid var(--black);
+    border-radius: 40px;
+    /*background-color: #303030;*/
+}
+
+.like_in_circle_off {
+    border: none;
+}
+
+.like_is_active {
+    color: var(--pimary);
+    stroke: var(--pimary);
+}
+
+.like_not_active {
+    stroke: #808080;
 }
