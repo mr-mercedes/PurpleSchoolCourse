@@ -1,0 +1,36 @@
+.wrapper {
+    width: 350px;
+    padding: 10px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.tag {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.post_text {
+    text-align: left;
+    line-height: 21px;
+    margin-bottom: 16px;
+}
+
+.post_footer {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.post_body {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: stretch;
+}
+
+.post_btn {
+    display: flex;
+    color: var(--pimary);
+}
