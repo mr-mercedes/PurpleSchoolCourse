@@ -1,4 +1,4 @@
-import {PostCart} from "@/components";
+import {Like, PostCart} from "@/components";
 
 const Home = () => {
     return (
@@ -9,6 +9,8 @@ const Home = () => {
                 text={'Грид-раскладка(CSS Grid Layout) представляет собой двумерную систему сеток в CSS. Гриды подойдут и для верстки основных областей страницы..'}
                 last_change={'3 минуты'}
             />
+            <Like showCircle={true}/>
+
         </main>
     );
 };

@@ -6,13 +6,22 @@
     align-items: center;
 }
 
-.like_in_circle_on {
-    border: 1px solid var(--black);
-    border-radius: 40px;
-    /*background-color: #303030;*/
+.like_zero {
+    display: none;
 }
 
-.like_in_circle_off {
+.like_in_circle_on {
+    stroke: #FFFFFF;
+}
+
+.circle_on svg{
+    border: 1px solid var(--black);
+    border-radius: 40px;
+    background-color: #303030;
+    stroke: #FFFFFF;
+}
+
+.circle_off {
     border: none;
 }
 
