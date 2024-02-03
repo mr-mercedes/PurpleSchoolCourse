@@ -11,14 +11,14 @@
 }
 
 .like_in_circle_on {
-    stroke: #FFFFFF;
+    stroke: #FFF;
 }
 
 .circle_on svg{
     border: 1px solid var(--black);
     border-radius: 40px;
     background-color: #303030;
-    stroke: #FFFFFF;
+    stroke: #FFF;
 }
 
 .circle_off {

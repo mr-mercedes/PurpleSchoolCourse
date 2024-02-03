@@ -7,11 +7,11 @@ import cn from "classnames";
 
 export const Like = ({count = 0, showCircle = false}: LikeProps): JSX.Element => {
     const [likeCount, setLikeCount] = useState<number>(count);
-    const [like, setLike] = useState<boolean>(false)
+    const [like, setLike] = useState<boolean>(false);
     const incrementLike = () => {
         setLikeCount(likeCount + 1);
-        if (!like) setLike(true)
-        setLike(false)
+        if (!like) setLike(true);
+        setLike(false);
         fetch('https://jsonplaceholder.typicode.com/posts/:id', {
             method: 'PATCH'}).then(resp =>
             console.log(resp)
