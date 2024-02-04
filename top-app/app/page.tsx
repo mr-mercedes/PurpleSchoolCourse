@@ -1,28 +1,19 @@
 import {PostCart} from "@/components";
 import {withLayout} from "@/layout/Layout";
 import styles from './Home.module.css';
+import {getPosts} from "@/api/posts";
 
-const Home = () => {
+const Home = async () => {
+    const posts = await getPosts();
     return (
         <div className={styles.content}>
-            <PostCart
-                tag={'Front - end · 1 месяц назад '}
-                title={'Как работать с CSS Grid'}
-                text={'Грид-раскладка(CSS Grid Layout) представляет собой двумерную систему сеток в CSS. Гриды подойдут и для верстки основных областей страницы..'}
-                last_change={'3 минуты'}
-            />
-            <PostCart
-                tag={'Front - end · 1 месяц назад '}
-                title={'Как работать с CSS Grid'}
-                text={'Грид-раскладка(CSS Grid Layout) представляет собой двумерную систему сеток в CSS. Гриды подойдут и для верстки основных областей страницы..'}
-                last_change={'3 минуты'}
-            />
-            <PostCart
-                tag={'Front - end · 1 месяц назад '}
-                title={'Как работать с CSS Grid'}
-                text={'Грид-раскладка(CSS Grid Layout) представляет собой двумерную систему сеток в CSS. Гриды подойдут и для верстки основных областей страницы..'}
-                last_change={'3 минуты'}
-            />
+            {posts.map(p => (
+                <PostCart key={p.id}
+                          tag={"Front - end · 1 месяц назад"}
+                          title={p.title}
+                          text={p.body}
+                          last_change={'3 минуты'}/>
+            ))};
         </div>
     );
 };
