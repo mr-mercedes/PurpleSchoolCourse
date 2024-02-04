@@ -6,7 +6,7 @@ import Link from "next/link";
 const Header = ({...props}:HeaderProps):JSX.Element => {
     return(<nav className={styles.nav} {...props}>
         <Link href={'/'}>Home</Link>
-        <Link href={'/news'}>News</Link>
+        <Link href={'/products/test'}>Products</Link>
         <Link href={'/about'}>About</Link>
     </nav>)
 }

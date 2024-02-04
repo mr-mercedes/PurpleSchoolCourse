@@ -1,15 +1,12 @@
-import {Metadata} from "next";
+/*
 import {withLayout} from "@/layout/Layout";
+import {JSX} from "react";
 
-export const metadata: Metadata = {
-    title: 'About'
-}
-
-const About = () => {
+const About = ():JSX.Element => {
   return (
       <div>
           About
       </div>
   )
 }
-export default withLayout(About);
+export default withLayout(About);*/
