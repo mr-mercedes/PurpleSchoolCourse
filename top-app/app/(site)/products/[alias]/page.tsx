@@ -4,19 +4,19 @@ import {getPage} from "@/api/page";
 import { notFound } from "next/navigation";
 import {getMenu} from "@/api/menu";
 import {getProducts} from "@/api/products";
+import {JSX} from "react";
 
 export const metadata: Metadata = {
     title: 'Product'
-}
+};
 export const generateStaticParams = async () => {
     const menu = await getMenu(0);
-    return menu.flatMap(item=> item.pages.map(page=> ({alias: page.alias})))
-}
+    return menu.flatMap(item=> item.pages.map(page=> ({alias: page.alias})));
+};
 
 const Products = async ({params}: { params: { alias: string } }) => {
     const page = await getPage(params.alias);
-    if (!page) return "";
-    const products = await getProducts(page.category,10)
+    const products = await getProducts(page.category,10);
     if (!page) notFound();
     return (
         <div>
@@ -27,6 +27,6 @@ const Products = async ({params}: { params: { alias: string } }) => {
                 </ul>
             </div>
         </div>
-    )
-}
-export default withLayout(Products);
+    );
+};
+export default Products;

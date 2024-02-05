@@ -1,6 +1,6 @@
 import {JSX} from "react";
 import {ButtonProps} from "@/components/Button/Button.props";
-import styles from "./Button.module.css"
+import styles from "./Button.module.css";
 import cn from 'classnames';
 import Image from "next/image";
 
@@ -23,5 +23,5 @@ export const Button = ({children, arrow = 'none', appearance, className, ...prop
                     width={5.8}
                     height={10}
                 /></span>}
-        </button>)
-}
+        </button>);
+};

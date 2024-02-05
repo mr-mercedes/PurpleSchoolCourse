@@ -1,7 +1,6 @@
 import {JSX} from "react";
 import {HtagProps} from "@/components/Htag/Htag.props";
 import styles from './Htag.module.css';
-import cn from 'classnames';
 
 
 export const Htag = ({tag, children, ...props}: HtagProps): JSX.Element => {
@@ -15,4 +14,4 @@ export const Htag = ({tag, children, ...props}: HtagProps): JSX.Element => {
         default:
             return <></>;
     }
-}
+};

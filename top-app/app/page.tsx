@@ -1,16 +1,11 @@
-"use client"
-import {withLayout} from '@/layout/Layout'
-import {Button, Htag, Paragraph, Rating, Tag} from "@/components";
-import React from "react";
-import {Menu} from "@/app/(site)/components/menu";
+import {withLayout} from '@/layout/Layout';
+import {Button, Htag, Paragraph, Tag} from "@/components";
 
 
-const Home = async () => {
+const Home = () => {
     //const [rating, setRating] = useState<number>(4);
-
     return (
-        <>
-            <Menu/>
+        <div>
             <Htag tag={'h1'}>Текст</Htag>
             <Button appearance={'primary'} arrow={'right'}>Кнопка</Button>
             <Button appearance={'ghost'} arrow={'down'}>Кнопка</Button>
@@ -22,7 +17,8 @@ const Home = async () => {
             <Tag size={14}>Сред</Tag>
             <Tag size={14} color={"red"}>Сред</Tag>
             {/*<Rating rating={rating} isEditable={true} setRating={setRating}/>*/}
-        </>
+        </div>
     );
 }
+
 export default withLayout(Home);

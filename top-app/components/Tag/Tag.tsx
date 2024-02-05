@@ -19,5 +19,5 @@ export const Tag = ({children, size = 14, color, href, className, ...props}: Tag
                     ? <a href={href}>{children}</a>
                     : <>{children}</>
             }
-        </div>)
-}
+        </div>);
+};

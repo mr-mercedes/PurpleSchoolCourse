@@ -6,12 +6,7 @@ export const getMenu = async (firstCategory: number): Promise<MenuItem[]> => {
         method: 'POST',
         body: JSON.stringify({firstCategory}),
         headers: new Headers({'content-type': 'application/json'}),
-        next: {revalidate:10}
+        next: {revalidate: 30}
     });
     return res.json();
-}
-
-interface HomeProps extends Record<string, unknown>{
-    menu: MenuItem[];
-    firstCategory: number;
 }

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, {JSX, useEffect, useState} from "react";
 import styles from './Rating.module.css';
 import cn from 'classnames';
@@ -21,13 +21,13 @@ export const Rating = ({isEditable = false, rating, setRating, ...props}: Rating
                       onClick={() => onclick(i + 1)}>
                     {
                         i < currentRating
-                            ? <Image src={'/star_fill.svg'} alt={'star fill'} width={20} height={20}
+                            ? <Image  src={'/star_fill.svg'} alt={'star fill'} width={20} height={20}
                                      tabIndex={isEditable ? 0 : -1}
                                      onKeyDown={(e: React.KeyboardEvent<HTMLImageElement>) => isEditable && handleSpace(i + 1, e)}/>
-                            : <Image src={'/star.svg'} alt={'star'} width={20} height={20}
+                            : <Image  src={'/star.svg'} alt={'star'} width={20} height={20}
                                      tabIndex={isEditable ? 0 : -1}
                                      onKeyDown={(e: React.KeyboardEvent<HTMLImageElement>) => isEditable && handleSpace(i + 1, e)}/>
-                    }
+                    };
                 </span>
 
             );
@@ -37,18 +37,18 @@ export const Rating = ({isEditable = false, rating, setRating, ...props}: Rating
 
     const changeDisplay = (rating: number) => {
         if (!isEditable) return;
-        constructRating(rating)
+        constructRating(rating);
     }
     const onclick = (rating: number) => {
         if (!isEditable || !setRating) return;
-        setRating(rating)
-    }
+        setRating(rating);
+    };
     const handleSpace = (rating: number, e: React.KeyboardEvent<HTMLImageElement>) => {
         if (e.code != 'Space' || !setRating) return;
-        setRating(rating)
-    }
+        setRating(rating);
+    };
 
     return (<div {...props}>
         {ratingArray.map((r, i) => (<span key={i}>{r}</span>))}
-    </div>)
-}
+    </div>);
+};
