@@ -6,30 +6,42 @@
     align-items: center;
 }
 
+
 .like_zero {
     display: none;
 }
 
-.like_in_circle_on {
-    stroke: #FFF;
-}
-
-.circle_on svg{
+.circle_on {
     border: 1px solid var(--black);
     border-radius: 40px;
-    background-color: #303030;
-    stroke: #FFF;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.circle_is_active {
+    background-color: #303030;
+}
+
 
 .circle_off {
     border: none;
 }
 
 .like_is_active {
-    color: var(--pimary);
+    stroke: #FFF;
+}
+
+.like_is_active:hover {
     stroke: var(--pimary);
 }
 
-.like_not_active {
+.like_not_active:hover {
     stroke: #808080;
+}
+
+.like_not_active:hover {
+    stroke: var(--pimary);
 }

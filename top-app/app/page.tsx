@@ -12,7 +12,9 @@ const Home = async () => {
                           tag={"Front - end · 1 месяц назад"}
                           title={p.title}
                           text={p.body}
-                          last_change={'3 минуты'}/>
+                          last_change={'3 минуты'}
+                          post_id={p.id}
+                />
             ))};
         </div>
     );

@@ -4,9 +4,9 @@ import {Like} from "@/components";
 import styles from './PostCart.module.css';
 import {PostCartText} from "@/components/PostCart/components/PostCartText";
 import {PostCartProps} from "@/components/PostCart/PostCart.props";
+import Link from "next/link";
 
-export const PostCart = ({tag, title, text, last_change}: PostCartProps): JSX.Element => {
-
+export const PostCart = ({tag, title, text, last_change, post_id}: PostCartProps): JSX.Element => {
     return (
         <div className={styles.wrapper}>
             <Image
@@ -24,12 +24,12 @@ export const PostCart = ({tag, title, text, last_change}: PostCartProps): JSX.El
             </div>
             <div className={styles.post_footer}>
                 <PostCartText size={12}>{last_change}</PostCartText>
-                <a href={'/'}><span className={styles.post_btn}>Читать<Image
+                <Link href={`/post/${post_id}`}><span className={styles.post_btn}>Читать<Image
                     src={'/arrow.svg'}
                     alt={'cart image'}
                     width={20}
                     height={20}
-                /></span></a>
+                /></span></Link>
             </div>
         </div>);
 };

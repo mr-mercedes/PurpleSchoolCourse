@@ -3,4 +3,5 @@ export interface PostCartProps {
     title: string;
     text: string;
     last_change: string;
+    post_id: string;
 }
