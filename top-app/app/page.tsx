@@ -1,9 +1,10 @@
 import {withLayout} from '@/layout/Layout';
 import {Button, Htag, Paragraph, Tag} from "@/components";
+import {getMenu} from "@/api/menu";
 
 
-const Home = () => {
-    //const [rating, setRating] = useState<number>(4);
+const Home = async () => {
+    const menu = await getMenu(0);
     return (
         <div>
             <Htag tag={'h1'}>Текст</Htag>
@@ -20,5 +21,6 @@ const Home = () => {
         </div>
     );
 }
+
 
 export default withLayout(Home);

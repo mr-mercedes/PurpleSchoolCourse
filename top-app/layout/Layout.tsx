@@ -7,6 +7,7 @@ import styles from './Layout.module.css';
 import {AppContextProvider, IAppContext} from "@/context/app.context";
 
 
+
 const Layout = ({children}: LayoutProps): JSX.Element => {
     return (
         <div className={styles.wrapper}>
