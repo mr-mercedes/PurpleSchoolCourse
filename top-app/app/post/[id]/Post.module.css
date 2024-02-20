@@ -1,0 +1,43 @@
+.wrapper {
+    max-width: 800px;
+
+}
+
+.tag {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+    font-size: 12px;
+    line-height: normal;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.post_body {
+    font-size: 18px;
+    line-height: 32px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.post_text {
+    color: #6E6E6E;
+}
+
+.post_middle {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 15px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.post_comment_text {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

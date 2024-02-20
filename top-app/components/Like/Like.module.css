@@ -3,5 +3,45 @@
     display: flex;
     font-size: 12px;
     flex-flow: row nowrap;
-    align-items: flex-end;
+    align-items: center;
+}
+
+
+.like_zero {
+    display: none;
+}
+
+.circle_on {
+    border: 1px solid var(--black);
+    border-radius: 40px;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle_is_active {
+    background-color: #303030;
+}
+
+
+.circle_off {
+    border: none;
+}
+
+.like_is_active {
+    stroke: #FFF;
+}
+
+.like_is_active:hover {
+    stroke: var(--pimary);
+}
+
+.like_not_active:hover {
+    stroke: #808080;
+}
+
+.like_not_active:hover {
+    stroke: var(--pimary);
 }
