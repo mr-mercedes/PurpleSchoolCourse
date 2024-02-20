@@ -4,7 +4,6 @@ import cn from 'classnames';
 import styles from './Tag.module.css';
 
 export const Tag = ({children, size = 14, color, href, className, ...props}: TagProps): JSX.Element => {
-
     return (
         <div className={cn(styles.tag, className, {
             [styles.small]: size == 12,

@@ -1,10 +1,8 @@
 import {withLayout} from '@/layout/Layout';
 import {Button, Htag, Paragraph, Tag} from "@/components";
-import {getMenu} from "@/api/menu";
 
 
-const Home = async () => {
-    const menu = await getMenu(0);
+const Home = () => {
     return (
         <div>
             <Htag tag={'h1'}>Текст</Htag>
@@ -20,7 +18,7 @@ const Home = async () => {
             {/*<Rating rating={rating} isEditable={true} setRating={setRating}/>*/}
         </div>
     );
-}
+};
 
 
 export default withLayout(Home);

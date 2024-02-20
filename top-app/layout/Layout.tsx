@@ -22,7 +22,7 @@ const Layout = ({children}: LayoutProps): JSX.Element => {
 }
 
 
-export const withLayout = <T extends Record<string, unknown> & IAppContext & Promise<JSX.Element>>(
+export const withLayout = <T extends Record<string, never> & IAppContext & AliasProps>(
     Component: FunctionComponent<T>) => (props: T): JSX.Element => (
         <AppContextProvider menu={props.menu} firstCategory={props.firstCategory}>
             <Layout>
@@ -30,3 +30,7 @@ export const withLayout = <T extends Record<string, unknown> & IAppContext & Pro
             </Layout>
         </AppContextProvider>
     );
+
+interface AliasProps {
+    params: never
+}

@@ -34,7 +34,7 @@
 }
 
 .green {
-    color: var(--green);
+    color: var(--white);
     background: var(--green);
     font-weight: bold;
 }
