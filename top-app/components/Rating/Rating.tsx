@@ -4,7 +4,8 @@ import styles from './Rating.module.css';
 import cn from 'classnames';
 import {RatingProps} from "@/components/Rating/Rating.props";
 import Image from "next/image";
-
+import StarIcon from "@/public/star.svg";
+import StarFillIcon from "@/public/star_fill.svg";
 export const Rating = ({isEditable = false, rating, setRating, ...props}: RatingProps): JSX.Element => {
     const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
     useEffect(() => {
@@ -21,13 +22,13 @@ export const Rating = ({isEditable = false, rating, setRating, ...props}: Rating
                       onClick={() => onclick(i + 1)}>
                     {
                         i < currentRating
-                            ? <Image  src={'/star_fill.svg'} alt={'star fill'} width={20} height={20}
+                            ? <StarFillIcon alt={'star fill'}
                                      tabIndex={isEditable ? 0 : -1}
                                      onKeyDown={(e: React.KeyboardEvent<HTMLImageElement>) => isEditable && handleSpace(i + 1, e)}/>
-                            : <Image  src={'/star.svg'} alt={'star'} width={20} height={20}
+                            : <StarIcon alt={'star'}
                                      tabIndex={isEditable ? 0 : -1}
                                      onKeyDown={(e: React.KeyboardEvent<HTMLImageElement>) => isEditable && handleSpace(i + 1, e)}/>
-                    };
+                    }
                 </span>
 
             );

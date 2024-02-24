@@ -1,7 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['courses-top.ru']
+        domains: ['courses-top.ru'],
+        remotePatterns: [
+            {
+                protocol:'https',
+                hostname:'cdn-bucket.hb.bizmrg.com',
+                port: '',
+                pathname: '/courses-top-images/**'
+            }
+        ]
     },
     webpack(config, options) {
         const fileLoaderRule = config.module.rules.find((rule) =>

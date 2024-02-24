@@ -1,7 +1,7 @@
 "use client"
 import {TopPageComponentProps} from "./TopPageComponent.props";
 import React, {JSX, useReducer} from "react";
-import {Advantages, HhData, Htag, Sort, Tag} from "@/components";
+import {Advantages, HhData, Htag, Product, Sort, Tag} from "@/components";
 import styles from "./TopPageComponent.module.css";
 import {TopLevelCategory} from "@/interfaces/page.interfece";
 import {SortEnum} from "@/components/Sort/Sort.props";
@@ -20,7 +20,7 @@ export const TopPageComponent = ({ page, products, firstCategory }: TopPageCompo
                 <Sort sort={sort} setSort={setSort}/>
             </div>
             <div>
-                {products && (products.map(p=> <div key={p._id}>{p.title}</div>))}
+                {products && (products.map(p=> <Product key={p._id} product={p}/>))}
             </div>
             <div className={styles.hhTitle}>
                 <Htag tag={'h2'}>Вакансии - {page.category}</Htag>

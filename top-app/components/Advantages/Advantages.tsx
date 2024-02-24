@@ -11,6 +11,7 @@ export const Advantages = ({advantages}: AdvantagesProps): JSX.Element => {
                         <AdvantageLogo/>
                         <div className={styles.title}>{a.title}</div>
                         <hr className={styles.vline}/>
+                        {/*<div className={styles.vline}></div>*/}
                         <div>{a.description}</div>
                     </div>
                 )
