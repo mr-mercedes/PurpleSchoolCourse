@@ -1,9 +1,10 @@
 import {JSX} from "react";
-import {getPost, getPosts} from "@/api/posts";
+import {getPost, getPostComments, getPosts} from "@/api/posts";
 import Image from "next/image";
 import {Like} from "@/components";
 import {withLayout} from "@/layout/Layout";
 import styles from "./Post.module.css";
+import {Comments} from "@/components/Comments/Comments";
 
 export const generateStaticParams = async () => {
     const posts = await getPosts()
@@ -11,7 +12,8 @@ export const generateStaticParams = async () => {
 };
 
 const Poster = async ({params}: { params: { id: string } }): Promise<JSX.Element> => {
-    const post = await getPost(params.id)
+    const post = await getPost(params.id);
+    const comments = await getPostComments(params.id);
     return (
         <div className={styles.wrapper}>
             <h1>{post.title}</h1>
@@ -41,16 +43,7 @@ const Poster = async ({params}: { params: { id: string } }): Promise<JSX.Element
                 <span>Понравилось? Жми</span>
                 <Like showCircle={true}/>
             </div>
-            <div>
-                <h2>Комментарйи</h2>
-                <div className={styles.post_comment_text}>
-                    <span>Василий Пупкин</span>
-                    <span>·</span>
-                    <span>pupkin@gmail.com</span>
-                </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium ducimus nobis odio quos
-                    tempora!</p>
-            </div>
+            <Comments comments={comments}/>
 
             <form>
                 <input type="text" placeholder={'Имя'}/>
