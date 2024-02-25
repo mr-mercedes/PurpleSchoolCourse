@@ -19,5 +19,5 @@ export const PosterBody = ({postBody}: { postBody: string }): JSX.Element => {
                 <Like showCircle={true}/>
             </div>
         </>
-    )
-}
+    );
+};

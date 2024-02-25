@@ -1,6 +1,6 @@
 import {CommentsProps} from "@/components/Comments/Comments.props";
 import {JSX} from "react";
-import styles from "@/app/post/[id]/Post.module.css";
+import styles from "@/app/post/Post.module.css";
 
 
 export const Comments = ({comments, ...props}: CommentsProps): JSX.Element => {
@@ -18,10 +18,9 @@ export const Comments = ({comments, ...props}: CommentsProps): JSX.Element => {
                             </div>
                             <p>{c.body}</p>
                         </div>
-
-                    )
+                    );
                 })
             )}
         </div>
-    )
-}
+    );
+};

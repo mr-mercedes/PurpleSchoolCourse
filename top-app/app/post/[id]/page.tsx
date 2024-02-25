@@ -1,11 +1,11 @@
 import React, {JSX} from "react";
 import {getPost, getPostComments, getPosts} from "@/api/posts";
 import {withLayout} from "@/layout/Layout";
-import styles from "./Post.module.css";
+import styles from "../Post.module.css";
 import {Comments, PosterBody, PosterHead, PostForm} from "@/components";
 
 export const generateStaticParams = async () => {
-    const posts = await getPosts()
+    const posts = await getPosts();
     return posts.map(post => ({id: post.id.toString()}));
 };
 
@@ -18,7 +18,7 @@ const Poster = async ({params}: { params: { id: string } }): Promise<JSX.Element
             <PosterBody postBody={post.body}/>
             <Comments comments={comments}/>
             <PostForm postId={params.id}/>
-        </div>)
-}
+        </div>);
+};
 
 export default withLayout(Poster);

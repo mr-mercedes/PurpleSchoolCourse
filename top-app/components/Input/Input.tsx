@@ -19,6 +19,7 @@ export const Input = forwardRef(({
                 {...props}/>
             {error && <span className={styles.errorMessage}>{error.message}</span>}
         </div>
-
-    )
+    );
 });
+
+Input.displayName = "Input";

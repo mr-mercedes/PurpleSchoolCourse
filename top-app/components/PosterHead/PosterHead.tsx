@@ -23,6 +23,5 @@ export const PosterHead = ({postTitle}: { postTitle: string }): JSX.Element => {
                 height={440}
             />
         </>
-
-    )
-}
+    );
+};
