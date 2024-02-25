@@ -1,12 +1,13 @@
 .button {
     display: inline-block;
     box-sizing: border-box;
-    padding: 10px;
+    margin-top: 24px;
+    padding: 14px 44px;
     cursor: pointer;
     text-align: center;
     border: none;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 15px;
     transition: all 0.2s;
 }
 
@@ -28,6 +29,16 @@
 .ghost:hover {
     color: var(--white);
     background-color: var(--pimary);
+}
+
+.black {
+    color: var(--white);
+    background-color: var(--black-light);
+}
+.black:hover {
+    color: var(--white);
+    background-color: var(--black-light);
+    border: 1px solid var(--pimary-hover);
 }
 
 .arrow {

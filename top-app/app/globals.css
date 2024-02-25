@@ -1,12 +1,13 @@
 :root {
     --black: #3B434E;
+    --black-light: #484848;
     --white: #FFF;
     --pimary: #7653FC;
     --pimary-hover: #6344DF;
     --red: #FC836D;
     --green: #1DC37E;
     --gray-light: #EBEBEB;
-    --font-family: 'Noto Sans KR', sans-serif;
+    --font-family: 'Open Sans', sans-serif;
 }
 
 * {
@@ -18,7 +19,7 @@
 html,
 body {
     color: var(--black);
-    font-family: 'Noto Sans KR', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     background: #F5F6F8;
 }
 

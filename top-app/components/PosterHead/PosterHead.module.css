@@ -1,0 +1,10 @@
+.tag {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+
+    font-size: 12px;
+    line-height: normal;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

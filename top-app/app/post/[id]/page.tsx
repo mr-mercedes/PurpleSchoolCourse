@@ -1,10 +1,8 @@
-import {JSX} from "react";
+import React, {JSX} from "react";
 import {getPost, getPostComments, getPosts} from "@/api/posts";
-import Image from "next/image";
-import {Like} from "@/components";
 import {withLayout} from "@/layout/Layout";
 import styles from "./Post.module.css";
-import {Comments} from "@/components/Comments/Comments";
+import {Comments, PosterBody, PosterHead, PostForm} from "@/components";
 
 export const generateStaticParams = async () => {
     const posts = await getPosts()
@@ -16,41 +14,10 @@ const Poster = async ({params}: { params: { id: string } }): Promise<JSX.Element
     const comments = await getPostComments(params.id);
     return (
         <div className={styles.wrapper}>
-            <h1>{post.title}</h1>
-            <div className={styles.tag}>
-                <div><span>Front - end</span></div>
-                <div><span>·</span></div>
-                <div><span>1 месяц назад</span></div>
-                <div><span>·</span></div>
-                <div><span>3 минуты</span></div>
-                <div><span>·</span></div>
-                <Like/></div>
-            <Image
-                src={'/cart_img.png'}
-                alt={'cart image'}
-                width={687}
-                height={440}
-            />
-            <div className={styles.post_body}>
-                <p className={styles.post_text}>{post.body}</p>
-            </div>
-            <div className={styles.post_body}>
-                <h2>Что такое грид?</h2>
-                <span
-                    className={styles.post_text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, fugit.</span>
-            </div>
-            <div className={styles.post_middle}>
-                <span>Понравилось? Жми</span>
-                <Like showCircle={true}/>
-            </div>
+            <PosterHead postTitle={post.title}/>
+            <PosterBody postBody={post.body}/>
             <Comments comments={comments}/>
-
-            <form>
-                <input type="text" placeholder={'Имя'}/>
-                <input type="text" placeholder={'Комментарий'}/>
-                <button>Отправить</button>
-            </form>
-
+            <PostForm postId={params.id}/>
         </div>)
 }
 
