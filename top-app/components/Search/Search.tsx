@@ -1,6 +1,6 @@
 'use client'
 import {SearchProps} from "@/components/Search/Search.props";
-import {JSX, useCallback, useState} from "react";
+import {JSX, useState} from "react";
 import styles from "./Search.module.css";
 import cn from "classnames";
 import {Button, Input} from "@/components";

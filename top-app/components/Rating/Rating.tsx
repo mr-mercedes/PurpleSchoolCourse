@@ -1,12 +1,18 @@
 "use client";
-import React, {JSX, useEffect, useState} from "react";
+import React, {ForwardedRef, forwardRef, JSX, useEffect, useState} from "react";
 import styles from './Rating.module.css';
 import cn from 'classnames';
 import {RatingProps} from "@/components/Rating/Rating.props";
-import Image from "next/image";
 import StarIcon from "@/public/star.svg";
 import StarFillIcon from "@/public/star_fill.svg";
-export const Rating = ({isEditable = false, rating, setRating, ...props}: RatingProps): JSX.Element => {
+
+export const Rating = forwardRef(({
+                                      isEditable = false,
+                                      rating,
+                                      setRating,
+                                      error,
+                                      ...props
+                                  }: RatingProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
     const [ratingArray, setRatingArray] = useState<JSX.Element[]>(new Array(5).fill(<></>));
     useEffect(() => {
         constructRating(rating);
@@ -23,11 +29,11 @@ export const Rating = ({isEditable = false, rating, setRating, ...props}: Rating
                     {
                         i < currentRating
                             ? <StarFillIcon alt={'star fill'}
-                                     tabIndex={isEditable ? 0 : -1}
-                                     onKeyDown={(e: React.KeyboardEvent<HTMLImageElement>) => isEditable && handleSpace(i + 1, e)}/>
+                                            tabIndex={isEditable ? 0 : -1}
+                                            onKeyDown={(e: React.KeyboardEvent<HTMLImageElement>) => isEditable && handleSpace(i + 1, e)}/>
                             : <StarIcon alt={'star'}
-                                     tabIndex={isEditable ? 0 : -1}
-                                     onKeyDown={(e: React.KeyboardEvent<HTMLImageElement>) => isEditable && handleSpace(i + 1, e)}/>
+                                        tabIndex={isEditable ? 0 : -1}
+                                        onKeyDown={(e: React.KeyboardEvent<HTMLImageElement>) => isEditable && handleSpace(i + 1, e)}/>
                     }
                 </span>
 
@@ -49,7 +55,10 @@ export const Rating = ({isEditable = false, rating, setRating, ...props}: Rating
         setRating(rating);
     };
 
-    return (<div {...props}>
+    return (<div {...props} ref={ref} className={cn(styles.ratingWrapper, {
+        [styles.error]:error
+    })}>
         {ratingArray.map((r, i) => (<span key={i}>{r}</span>))}
+        {error && <span className={styles.errorMessage}>{error.message}</span>}
     </div>);
-};
+});

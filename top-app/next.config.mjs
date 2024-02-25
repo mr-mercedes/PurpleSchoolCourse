@@ -1,13 +1,18 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['courses-top.ru'],
         remotePatterns: [
             {
                 protocol:'https',
                 hostname:'cdn-bucket.hb.bizmrg.com',
                 port: '',
                 pathname: '/courses-top-images/**'
+            },
+            {
+                protocol:'https',
+                hostname:'courses-top.ru',
+                port: '',
+                pathname: '/upload/**'
             }
         ]
     },
