@@ -22,18 +22,27 @@ export const PostForm = ({postId, className, ...props}: PostFormProps): JSX.Elem
         <>
             <form
                 onSubmit={handleSubmit(onSub)}
-                className={className} {...props}>
+                className={className}
+                {...props}
+            >
                 <Input
                     placeholder={'Имя'}
                     error={errors.name}
-                    {...register('name', {required: {value: true, message: 'Введите свое имя'}})}
+                    {...register('name', {
+                        required: { value: true, message: 'Введите свое имя' },
+                    })}
                 />
                 <Textarea
                     placeholder={'Комментарий'}
                     error={errors.comment}
-                    {...register('comment', {required: {value: true, message: 'Введите комментарий'}})}
+                    {...register('comment', {
+                        required: {
+                            value: true,
+                            message: 'Введите комментарий',
+                        },
+                    })}
                 />
-                <Button appearance={"black"}>Отправить</Button>
+                <Button appearance={'black'}>Отправить</Button>
             </form>
         </>
     );

@@ -1,8 +1,8 @@
-import styles from "./PosterBody.module.css";
-import {Like} from "@/components";
-import {JSX} from "react";
+import styles from './PosterBody.module.css';
+import { Like } from '@/components';
+import { JSX } from 'react';
 
-export const PosterBody = ({postBody}: { postBody: string }): JSX.Element => {
+export const PosterBody = ({ postBody }: { postBody: string }): JSX.Element => {
     if (!postBody) return <></>;
     return (
         <>
@@ -11,12 +11,14 @@ export const PosterBody = ({postBody}: { postBody: string }): JSX.Element => {
             </div>
             <div className={styles.post_body}>
                 <h2>Что такое грид?</h2>
-                <span
-                    className={styles.post_text}>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum, fugit.</span>
+                <span className={styles.post_text}>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                    Cum, fugit.
+                </span>
             </div>
             <div className={styles.post_middle}>
                 <span>Понравилось? Жми</span>
-                <Like showCircle={true}/>
+                <Like showCircle={true} />
             </div>
         </>
     );

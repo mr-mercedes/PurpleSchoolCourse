@@ -35,6 +35,7 @@
     color: var(--white);
     background-color: var(--black-light);
 }
+
 .black:hover {
     color: var(--white);
     background-color: var(--black-light);
