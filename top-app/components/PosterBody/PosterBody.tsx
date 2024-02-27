@@ -2,8 +2,12 @@ import styles from './PosterBody.module.css';
 import { Like } from '@/components';
 import { JSX } from 'react';
 
-export const PosterBody = ({ postBody }: { postBody: string }): JSX.Element => {
-    if (!postBody) return <></>;
+export const PosterBody = ({
+    postBody,
+}: {
+    postBody: string;
+}): JSX.Element | null => {
+    if (!postBody) return null;
     return (
         <>
             <div className={styles.post_body}>

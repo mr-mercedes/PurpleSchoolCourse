@@ -13,24 +13,12 @@ export const PosterHead = ({
         <>
             <h1>{postTitle}</h1>
             <div className={styles.tag}>
-                <div>
-                    <span>Front - end</span>
-                </div>
-                <div>
-                    <span>·</span>
-                </div>
-                <div>
-                    <span>1 месяц назад</span>
-                </div>
-                <div>
-                    <span>·</span>
-                </div>
-                <div>
-                    <span>3 минуты</span>
-                </div>
-                <div>
-                    <span>·</span>
-                </div>
+                <span>Front - end</span>
+                <span>·</span>
+                <span>1 месяц назад</span>
+                <span>·</span>
+                <span>3 минуты</span>
+                <span>·</span>
                 <Like />
             </div>
             <Image
