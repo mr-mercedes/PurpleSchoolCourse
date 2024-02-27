@@ -1,0 +1,11 @@
+.wrapper {
+    max-width: 800px;
+
+}
+
+.post_comment_text {
+    display: flex;
+    gap: 5px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

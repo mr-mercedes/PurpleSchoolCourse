@@ -1,12 +1,18 @@
-import {JSX} from "react";
-import Image from "next/image";
-import {Like} from "@/components";
+import { JSX } from 'react';
+import Image from 'next/image';
+import { Like } from '@/components';
 import styles from './PostCart.module.css';
-import {PostCartText} from "@/components/PostCart/components/PostCartText";
-import {PostCartProps} from "@/components/PostCart/PostCart.props";
-import Link from "next/link";
+import { PostCartText } from '@/components/PostCart/components/PostCartText';
+import { PostCartProps } from '@/components/PostCart/PostCart.props';
+import Link from 'next/link';
 
-export const PostCart = ({tag, title, text, last_change, post_id}: PostCartProps): JSX.Element => {
+export const PostCart = ({
+    tag,
+    title,
+    text,
+    last_change,
+    post_id,
+}: PostCartProps): JSX.Element => {
     return (
         <div className={styles.wrapper}>
             <Image
@@ -17,19 +23,26 @@ export const PostCart = ({tag, title, text, last_change, post_id}: PostCartProps
             />
             <div className={styles.tag}>
                 <PostCartText size={12}>{tag}</PostCartText>
-                <Like/></div>
+                <Like />
+            </div>
             <div className={styles.post_text}>
                 <PostCartText size={18}>{title}</PostCartText>
                 <PostCartText size={14}>{text}</PostCartText>
             </div>
             <div className={styles.post_footer}>
                 <PostCartText size={12}>{last_change}</PostCartText>
-                <Link href={`/post/${post_id}`}><span className={styles.post_btn}>Читать<Image
-                    src={'/arrow.svg'}
-                    alt={'cart image'}
-                    width={20}
-                    height={20}
-                /></span></Link>
+                <Link href={`/post/${post_id}`}>
+                    <span className={styles.post_btn}>
+                        Читать
+                        <Image
+                            src={'/arrow.svg'}
+                            alt={'cart image'}
+                            width={20}
+                            height={20}
+                        />
+                    </span>
+                </Link>
             </div>
-        </div>);
+        </div>
+    );
 };

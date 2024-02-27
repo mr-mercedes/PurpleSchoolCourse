@@ -2,6 +2,8 @@
     width: 350px;
     padding: 10px;
     border: 1px solid black;
+    display: flex;
+    flex-direction: column;
     text-align: center;
 }
 
@@ -21,7 +23,8 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-end;
+    flex-grow: 1;
 }
 
 .post_body {
