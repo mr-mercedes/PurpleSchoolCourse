@@ -1,13 +1,18 @@
 "use client";
 import {ProductProps} from "@/components/Product/Product.props";
-import {JSX, useRef, useState} from "react";
+import {ForwardedRef, forwardRef, JSX, useRef, useState} from "react";
 import {Button, Card, Divider, Rating, Review, ReviewForm, Tag} from "@/components";
 import styles from "./Product.module.css";
 import Image from "next/image";
 import {declOfNum, priceRu} from "@/helpers/helpers";
 import cn from "classnames";
+import {motion} from 'framer-motion';
 
-export const Product = ({product, className, ...props}: ProductProps): JSX.Element => {
+export const Product = motion(forwardRef(({
+                                              product,
+                                              className,
+                                              ...props
+                                          }: ProductProps, ref: ForwardedRef<HTMLDivElement>): JSX.Element => {
     const [isReviewOpened, setIsReviewOpened] = useState<boolean>(false);
     const reviewRef = useRef<HTMLDivElement>(null);
     const scrollToReview = () => {
@@ -19,9 +24,13 @@ export const Product = ({product, className, ...props}: ProductProps): JSX.Eleme
             });
         }, 50)
     }
+    const variants = {
+        visible: {opacity: 1, height: 'auto'},
+        hidden: {opacity: 0, height: 0}
+    }
     const cdnDomain = "https://cdn-bucket.hb.bizmrg.com/courses-top-images/2022-04-21/";
     return (
-        <div className={className} {...props}>
+        <div className={className} {...props} ref={ref}>
             <Card className={styles.product}>
                 <div className={styles.logo}>
                     <Image
@@ -87,20 +96,19 @@ export const Product = ({product, className, ...props}: ProductProps): JSX.Eleme
                     >Читать отзывы</Button>
                 </div>
             </Card>
-            <Card color={'blue'} className={cn(styles.reviwes, {
-                [styles.opened]: isReviewOpened,
-                [styles.closed]: !isReviewOpened,
-            })} ref={reviewRef}>
-                {product.reviews.map(r => {
-                    return (
-                        <div key={r._id}>
-                            <Review review={r}/>
-                            <Divider/>
-                        </div>
-                    )
-                })}
-                <ReviewForm productId={product._id}/>
-            </Card>
+            <motion.div animate={isReviewOpened ? 'visible' : 'hidden'} variants={variants} initial={'hidden'}>
+                <Card color={'blue'} className={cn(styles.reviwes)} ref={reviewRef}>
+                    {product.reviews.map(r => {
+                        return (
+                            <div key={r._id}>
+                                <Review review={r}/>
+                                <Divider/>
+                            </div>
+                        )
+                    })}
+                    <ReviewForm productId={product._id}/>
+                </Card>
+            </motion.div>
         </div>
     )
-}
+}));
