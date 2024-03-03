@@ -12,7 +12,9 @@ import {Up} from "@/components";
 const Layout = ({children}: LayoutProps): JSX.Element => {
     return (
         <div className={styles.wrapper}>
-            <Header className={styles.header}/>
+            <Header className={styles.header}>
+                <Sidebar className={styles.sidebar_mobile}/>
+            </Header>
             <Sidebar className={styles.sidebar}/>
             <div className={styles.body}>
                 {children}

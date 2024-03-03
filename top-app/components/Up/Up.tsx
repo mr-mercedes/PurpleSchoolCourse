@@ -1,28 +1,33 @@
-"use client";
-import {JSX, useEffect} from "react";
+'use client';
+import { JSX, useEffect } from 'react';
 import styles from './Up.module.css';
-import UpIcon from '@/public/up.svg';
-import {useScrollY} from "@/hooks/useScrollY";
-import {useAnimation, motion} from "framer-motion";
-export const Up = ():JSX.Element => {
+import { useScrollY } from '@/hooks/useScrollY';
+import { motion, useAnimation } from 'framer-motion';
+import { ButtonIcon } from '@/components/ButtonIcon/ButtonIcon';
+
+export const Up = (): JSX.Element => {
     const controls = useAnimation();
     const y = useScrollY();
     useEffect(() => {
-        controls.start({opacity: y / document.body.scrollHeight});
+        controls.start({ opacity: y / document.body.scrollHeight });
     }, [y, controls]);
     const scrollToTop = () => {
-      window.scrollTo({
-          top: 0,
-          behavior: 'smooth'
-      })
-    }
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth',
+        });
+    };
     return (
-        <motion.button
+        <motion.div
             animate={controls}
-            initial={{opacity:0}}
+            initial={{ opacity: 0 }}
             className={styles.up}
-            onClick={scrollToTop}>
-            <UpIcon/>
-        </motion.button>
-    )
-}
+        >
+            <ButtonIcon
+                appearance={'primary'}
+                icon={'up'}
+                onClick={scrollToTop}
+            />
+        </motion.div>
+    );
+};

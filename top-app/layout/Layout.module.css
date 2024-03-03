@@ -12,7 +12,6 @@
 
 .header {
     grid-area: header;
-    display: none;
 }
 
 .sidebar {
@@ -27,21 +26,21 @@
     grid-area: footer;
 }
 
-@media (max-width: 750px) {
+@media (max-width: 765px) {
     .wrapper {
         grid-template-columns: minmax(320px, 1fr);
         grid-template-areas:
             "header"
             "body"
             "footer";
+        gap: 10px;
     }
 
     .sidebar {
         display: none !important;
     }
-
-    .header {
-        display: block;
+    .sidebar_mobile {
+        display: grid;
     }
     .body {
         padding: 15px;

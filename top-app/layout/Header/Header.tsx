@@ -1,14 +1,59 @@
-import {HeaderProps} from "@/layout/Header/Header.props";
-import React, {JSX} from "react";
-import styles from "@/app/home.module.css";
-import Link from "next/link";
+'use client';
+import { HeaderProps } from '@/layout/Header/Header.props';
+import React, { JSX, useEffect, useState } from 'react';
+import styles from './Header.module.css';
+import Logo from '@/public/logo.svg';
+import cn from 'classnames';
+import { ButtonIcon } from '@/components/ButtonIcon/ButtonIcon';
+import { motion, useReducedMotion } from 'framer-motion';
+import { useRouter } from 'next/navigation';
 
-const Header = ({...props}:HeaderProps):JSX.Element => {
-    return(<nav className={styles.nav} {...props}>
-        <Link href={'/'}>Home</Link>
-        <Link href={'/products/test'}>Products</Link>
-        <Link href={'/about'}>About</Link>
-    </nav>)
-}
+const Header = ({children, className, ...props }: HeaderProps): JSX.Element => {
+    const [isOpened, setIsOpened] = useState<boolean>(false);
+    const router = useRouter();
+    const shouldReduceMotion = useReducedMotion();
+
+    useEffect(() => {
+        setIsOpened(false);
+    }, [router]);
+
+    const variants = {
+        opened: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                stiffness: 20
+            }
+        },
+        closed: {
+            opacity: shouldReduceMotion ? 1 : 0,
+            x: '100%',
+        }
+    };
+    return (
+        <header className={cn(className, styles.header)} {...props}>
+            <Logo />
+            <ButtonIcon
+                appearance={'white'}
+                icon={'menu'}
+                onClick={() => setIsOpened(true)}
+            />
+            <motion.div
+                className={styles.mobileMenu}
+                variants={variants}
+                initial={'closed'}
+                animate={isOpened ? 'opened' : 'closed'}
+            >
+                {children}
+                <ButtonIcon
+                    className={styles.menuClose}
+                    appearance={'white'}
+                    icon={'close'}
+                    onClick={() => setIsOpened(false)}
+                />
+            </motion.div>
+        </header>
+    );
+};
 
 export default Header;
