@@ -1,22 +1,27 @@
 import {LayoutProps} from "@/layout/Layout.props";
-import React, {FunctionComponent, JSX} from "react";
+import React, { FunctionComponent, JSX, useRef } from 'react';
 import Footer from "./Footer/Footer";
 import Header from "./Header/Header";
 import Sidebar from "./Sidebar/Sidebar";
 import styles from './Layout.module.css';
 import {AppContextProvider, IAppContext} from "@/context/app.context";
 import {Up} from "@/components";
+import { SkipLink } from '@/components/SkipLink/SkipLink';
 
 
 
 const Layout = ({children}: LayoutProps): JSX.Element => {
     return (
         <div className={styles.wrapper}>
+            <SkipLink/>
             <Header className={styles.header}>
                 <Sidebar className={styles.sidebar_mobile}/>
             </Header>
             <Sidebar className={styles.sidebar}/>
-            <div className={styles.body}>
+            <div
+                id={'content_body'}
+                className={styles.body}
+                tabIndex={0}>
                 {children}
             </div>
             <Footer className={styles.footer}/>
