@@ -17,7 +17,6 @@ const Home = async () => {
                     post_id={p.id}
                 />
             ))}
-            ;
         </div>
     );
 };

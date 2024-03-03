@@ -1,3 +1,4 @@
+'use client';
 import { JSX } from 'react';
 import Image from 'next/image';
 import { Like } from '@/components';
@@ -5,7 +6,7 @@ import styles from './PostCart.module.css';
 import { PostCartText } from '@/components/PostCart/components/PostCartText';
 import { PostCartProps } from '@/components/PostCart/PostCart.props';
 import Link from 'next/link';
-
+import { motion } from 'framer-motion';
 export const PostCart = ({
     tag,
     title,
@@ -13,8 +14,26 @@ export const PostCart = ({
     last_change,
     post_id,
 }: PostCartProps): JSX.Element => {
+    const variants = {
+        hidden: { opacity: 0 },
+        visible: (i: number) => {
+            const delay = i * 0.5;
+            return {
+                opacity: 1,
+                transition: {
+                    opacity: { delay, duration: 0.3 },
+                },
+            };
+        },
+    };
     return (
-        <div className={styles.wrapper}>
+        <motion.div
+            variants={variants}
+            initial={'hidden'}
+            animate={'visible'}
+            custom={Number(post_id)}
+            className={styles.wrapper}
+        >
             <Image
                 src={'/cart_img.png'}
                 alt={'cart image'}
@@ -43,6 +62,6 @@ export const PostCart = ({
                     </span>
                 </Link>
             </div>
-        </div>
+        </motion.div>
     );
 };
