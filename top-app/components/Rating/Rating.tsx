@@ -52,7 +52,7 @@ export const Rating = forwardRef(
                             onKeyDown={handleKey}
                             ref={r => ratingArrayRef.current?.push(r)}
                             role={isEditable ? 'slider' : ''}
-                            aria-invalid={error ? true : false}
+                            aria-invalid={!!error}
                             aria-valuenow={rating}
                             aria-valuemax={5}
                             aria-label={isEditable ? 'Укажите рейтинг' : ('рейтинг' + rating)}
@@ -129,7 +129,7 @@ export const Rating = forwardRef(
                     <span key={i}>{r}</span>
                 ))}
                 {error && (
-                    <span className={styles.errorMessage}>{error.message}</span>
+                    <span className={styles.errorMessage} role={'alert'}>{error.message}</span>
                 )}
             </div>
         );

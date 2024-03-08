@@ -18,12 +18,13 @@ const Layout = ({children}: LayoutProps): JSX.Element => {
                 <Sidebar className={styles.sidebar_mobile}/>
             </Header>
             <Sidebar className={styles.sidebar}/>
-            <div
+            <main
+                role={'main'}
                 id={'content_body'}
                 className={styles.body}
                 tabIndex={0}>
                 {children}
-            </div>
+            </main>
             <Footer className={styles.footer}/>
             <Up/>
         </div>
