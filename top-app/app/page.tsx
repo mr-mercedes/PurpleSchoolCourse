@@ -6,7 +6,7 @@ import { getPosts } from '@/api/posts';
 const Home = async () => {
     const posts = await getPosts();
     return (
-        <div className={styles.content}>
+        <ul className={styles.content}>
             {posts.map((p) => (
                 <PostCart
                     key={p.id}
@@ -17,7 +17,7 @@ const Home = async () => {
                     post_id={p.id}
                 />
             ))}
-        </div>
+        </ul>
     );
 };
 export default withLayout(Home);

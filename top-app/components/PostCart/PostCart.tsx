@@ -27,7 +27,7 @@ export const PostCart = ({
         },
     };
     return (
-        <motion.div
+        <motion.li
             variants={variants}
             initial={'hidden'}
             animate={'visible'}
@@ -62,6 +62,6 @@ export const PostCart = ({
                     </span>
                 </Link>
             </div>
-        </motion.div>
+        </motion.li>
     );
 };

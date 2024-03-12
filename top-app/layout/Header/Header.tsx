@@ -6,8 +6,9 @@ import Image from 'next/image';
 export const Header = ({ className, ...props }: HeaderProps): JSX.Element => {
     return (
         <div className={styles.title} {...props}>
-            <span>.my_blog</span>
+            <span tabIndex={0}>.my_blog</span>
             <Image
+                tabIndex={0}
                 src={'/git.svg'}
                 alt={'git'}
                 width={40}
